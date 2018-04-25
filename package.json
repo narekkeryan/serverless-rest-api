@@ -1,0 +1,21 @@
+{
+  "name": "serverless-rest-api",
+  "version": "1.0.0",
+  "description": "Rest API using Serverless and MongoDB",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["serverless", "aws", "rest", "api", "mongo", "mongodb"],
+  "author": "Narek Keryan <narek.keryan@gmail.com> (http://nkgdev.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-offline": "^3.20.3"
+  },
+  "dependencies": {
+    "cities.json": "^1.1.2",
+    "dotenv": "^5.0.1",
+    "mongoose": "^5.0.15",
+    "zipcodes": "^6.0.0"
+  }
+}

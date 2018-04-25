@@ -1,0 +1,12 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# keys and passwords
+variables.env
+
+# -lock files
+package-lock.json
