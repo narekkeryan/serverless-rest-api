@@ -75,6 +75,7 @@ functions:
       - http:
           path: city/create
           method: post
+    timeout: 300
 
   getCities:
     handler: handler.getCities
