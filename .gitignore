@@ -10,3 +10,6 @@ variables.env
 
 # -lock files
 package-lock.json
+
+# Intellij files
+.idea
