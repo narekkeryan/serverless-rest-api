@@ -151,17 +151,12 @@ module.exports.getCitiesByCountryName = (event, context, callback) => {
         .then(() => Country.find({ name: { $regex: '.*' + name + '.*' } }, { _id: 1 }))
         .then(countries => {
             let ids = countries.map(country => country._id);
-            City.find({ country: { $in: ids } }).populate('country').exec()
-                .then(cities => callback(null, {
-                    statusCode: 200,
-                    body: JSON.stringify(cities)
-                }))
-                .catch(err => callback(null, {
-                    statusCode: err.statusCode || 500,
-                    headers: { 'Content-Type': 'text/plain' },
-                    body: err.message
-                }));
+            return City.find({ country: { $in: ids } }).populate('country').exec();
         })
+        .then(cities => callback(null, {
+            statusCode: 200,
+            body: JSON.stringify(cities)
+        }))
         .catch(err => callback(null, {
             statusCode: err.statusCode || 500,
             headers: { 'Content-Type': 'text/plain' },
